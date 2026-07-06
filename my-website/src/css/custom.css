@@ -1,0 +1,100 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+.pdf-export-button {
+     position: fixed;
+     top: 70px;
+     right: 20px;
+     z-index: 100;
+     padding: 8px 14px;
+     border-radius: 6px;
+     border: 1px solid var(--ifm-color-emphasis-300);
+     background: var(--ifm-background-color);
+     cursor: pointer;
+ }
+
+@media print {
+  .pdf-export-button,
+  nav.navbar,
+  .theme-doc-sidebar-container,
+  .theme-doc-toc-desktop,
+  .theme-doc-toc-mobile,
+  .theme-doc-footer-edit-meta-row,
+  .pagination-nav,
+  footer {
+    display: none !important;
+  }
+
+  .theme-doc-markdown {
+    width: 100% !important;
+  }
+
+  /* évite les coupures moches dans les blocs de code */
+  pre, table, img {
+    break-inside: avoid;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+    .docusaurus-mermaid-container {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        max-width: 100% !important;
+    }
+
+    /* Si le SVG dépasse la largeur de la page, on le fait rentrer */
+    .docusaurus-mermaid-container svg {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Force les variables Mermaid en mode clair, peu importe le thème actif */
+    [data-theme='dark'] .docusaurus-mermaid-container,
+    .docusaurus-mermaid-container {
+        background: white !important;
+    }
+
+    .docusaurus-mermaid-container svg {
+        background: white !important;
+    }
+
+    /* Texte et traits toujours visibles sur fond blanc */
+    .docusaurus-mermaid-container svg text {
+        fill: #1c1e21 !important;
+    }
+
+    .docusaurus-mermaid-container svg path,
+    .docusaurus-mermaid-container svg line {
+        stroke: #1c1e21 !important;
+    }
+}

@@ -1,9 +1,12 @@
 import MermaidDiagram from '@site/src/components/MermaidDiagram';
+import ExportPDFButton from '@site/src/components/ExportPDFButton';
 
 ---
 title: Documentation Renovate
 description: Documentation de Renovate, un outil d'automatisation de mise à jour de dépendances.
 ---
+
+<ExportPDFButton >Télécharger le PDF</ExportPDFButton>
 
 ## Fonctionnement de Renovate
 
